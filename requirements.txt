@@ -1,0 +1,12 @@
+crewai>=0.80.0
+crewai-tools>=0.20.0
+apify-client>=1.7.0
+elevenlabs>=1.50.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+litellm>=1.40.0
+google-api-python-client>=2.0.0
+google-auth-httplib2>=0.2.0
+google-auth-oauthlib>=1.0.0
+Pillow>=10.0.0
+gTTS>=2.5.0
