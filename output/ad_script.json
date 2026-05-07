@@ -1,0 +1,54 @@
+{
+  "title": "CrowdWisdomTrading - Trade with the Crowd",
+  "narration": "Tired of losing money because you're trading alone? Every day, traders drown in noise, chase random tips, and let fear and greed sabotage their trades. They miss entries, second-guess exits, and wonder why their strategy never sticks. What if you could see exactly what 50,000 successful traders are buying right now? Introducing CrowdWisdomTrading: the Daily Ads Edge Dashboard that aggregates real-time crowd sentiment, AI-powered alerts, and live trading room guidance. Our members average +34% returns in six months, with a 76% win rate on published setups\u2014featured in MarketWatch and Benzinga. Join thousands who turned inconsistency into confidence, and start trading with the wisdom of the crowd. Start your free 7-day trial\u2014no credit card needed\u2014at crowdwisdomtrading.com/trial.",
+  "segments": [
+    {
+      "text": "Tired of losing money because you're trading alone?",
+      "start": 0,
+      "duration": 4
+    },
+    {
+      "text": "Every day, traders drown in noise, chase random tips, and let fear and greed sabotage their trades.",
+      "start": 4,
+      "duration": 8
+    },
+    {
+      "text": "They miss entries, second-guess exits, and wonder why their strategy never sticks.",
+      "start": 12,
+      "duration": 8
+    },
+    {
+      "text": "What if you could see exactly what 50,000 successful traders are buying right now?",
+      "start": 20,
+      "duration": 7
+    },
+    {
+      "text": "Introducing CrowdWisdomTrading: the Daily Ads Edge Dashboard that aggregates real-time crowd sentiment, AI-powered alerts, and live trading room guidance.",
+      "start": 27,
+      "duration": 11
+    },
+    {
+      "text": "Our members average +34% returns in six months, with a 76% win rate on published setups\u2014featured in MarketWatch and Benzinga.",
+      "start": 38,
+      "duration": 10
+    },
+    {
+      "text": "Join thousands who turned inconsistency into confidence, and start trading with the wisdom of the crowd.",
+      "start": 48,
+      "duration": 10
+    },
+    {
+      "text": "Start your free 7-day trial\u2014no credit card needed\u2014at crowdwisdomtrading.com/trial.",
+      "start": 58,
+      "duration": 2
+    }
+  ],
+  "image_prompts": [
+    "Scene 1 (0-10s): A frustrated trader staring at a chaotic computer screen filled with overlapping charts, red warning signs, and too many indicators; visual of information overload; text overlay: 'Tired of losing money because you're trading alone?'",
+    "Scene 2 (10-20s): Split screen showing a trader missing a buy signal (price moving up while they hesitate), then an emotional reaction (facepalm, stressed); icons of fear and greed appear; conveys pain of emotional trading and missed entries.",
+    "Scene 3 (20-30s): Clean, modern dashboard interface of CrowdWisdomTrading: real-time crowd sentiment gauge, top 5 daily setups list, AI alert popping up on a smartphone, and live trading room video feed in the background; highlights solution and ease of use.",
+    "Scene 4 (30-40s): Animated proof points: counter rising to '50,000+ members', graph showing '+34% avg return', badge '76% win rate', and logos of MarketWatch, Benzinga, TradingView appearing with a verification checkmark; builds credibility.",
+    "Scene 5 (40-50s): Diverse trader testimonials: a young professional checking profits on a laptop with a smile, a veteran trader giving a thumbs-up in a trading room, and a side-by-side transformation from a red losing statement to a green profitable statement; social proof and transformation.",
+    "Scene 6 (50-60s): Call-to-action screen: URL 'crowdwisdomtrading.com/trial' prominent, button 'Start Free Trial - No Credit Card', background of traders celebrating, timer showing '7 days free'; urgent and clear CTA."
+  ]
+}

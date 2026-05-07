@@ -1,0 +1,60 @@
+[
+  {
+    "id": "sample_001",
+    "page_name": "TradingPro Academy",
+    "body": "Stop losing money trading alone. Our crowd-powered signals helped 12,000 traders hit consistent profits last quarter. 7-day free trial \u2014 no credit card needed.",
+    "title": "Finally, Trading That Actually Works",
+    "cta": "SIGN_UP",
+    "platforms": [
+      "FACEBOOK",
+      "INSTAGRAM"
+    ],
+    "impressions": 980000
+  },
+  {
+    "id": "sample_002",
+    "page_name": "WealthSignals Daily",
+    "body": "I was working 60-hour weeks and still couldn't save. Then I found this trading system. Now I work 2 hours a day and earn more than my old salary. Here's exactly how.",
+    "title": "From Broke to $6k/Month Trading",
+    "cta": "LEARN_MORE",
+    "platforms": [
+      "FACEBOOK"
+    ],
+    "impressions": 750000
+  },
+  {
+    "id": "sample_003",
+    "page_name": "MarketEdge Signals",
+    "body": "What if you could see every high-probability trade BEFORE the move? Our AI-powered crowd data identifies setups 24 hours in advance. Join 50,000 traders already using it.",
+    "title": "Trade Smarter With Crowd Intelligence",
+    "cta": "GET_STARTED",
+    "platforms": [
+      "FACEBOOK",
+      "INSTAGRAM"
+    ],
+    "impressions": 620000
+  },
+  {
+    "id": "sample_004",
+    "page_name": "DayTrader Blueprint",
+    "body": "Most retail traders lose because they trade on emotion. Our rules-based system removes the guesswork. 76% win rate verified by third-party audit. Try free for 7 days.",
+    "title": "Stop Guessing. Start Winning.",
+    "cta": "TRY_FREE",
+    "platforms": [
+      "INSTAGRAM"
+    ],
+    "impressions": 510000
+  },
+  {
+    "id": "sample_005",
+    "page_name": "Options Alpha Community",
+    "body": "Tired of watching stocks move without you? Get real-time alerts the moment our crowd identifies a setup. No experience needed \u2014 we walk you through every trade.",
+    "title": "Never Miss a Trade Again",
+    "cta": "JOIN_NOW",
+    "platforms": [
+      "FACEBOOK",
+      "INSTAGRAM"
+    ],
+    "impressions": 490000
+  }
+]

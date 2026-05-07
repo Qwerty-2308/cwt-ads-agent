@@ -1,0 +1,19 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+dist/
+*.egg-info/
+.DS_Store
+# output/*.json  # sample outputs committed for demo
+output/*.mp3
+# output/*.mp4  # uncommenting keeps sample video out of git
+output/*.png
+output/*.jpg
+!output/.gitkeep
+video/node_modules/
+video/.cache/
+video/out/
+*.log
