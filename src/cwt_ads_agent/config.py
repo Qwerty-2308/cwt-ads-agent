@@ -5,6 +5,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+# --- CLI overrides (injected by main.py argparse before config loads) ---
+PRODUCT_OVERRIDE: str = os.getenv('PRODUCT_OVERRIDE', '')
+SEARCH_TERMS_OVERRIDE: str = os.getenv('SEARCH_TERMS_OVERRIDE', '')
+OUTPUT_DIR_OVERRIDE: str = os.getenv('OUTPUT_DIR_OVERRIDE', '')
+
 # --- API Keys ---
 OPENROUTER_API_KEY: str = os.environ["OPENROUTER_API_KEY"]
 APIFY_API_TOKEN: str = os.environ["APIFY_API_TOKEN"]

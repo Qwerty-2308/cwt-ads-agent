@@ -7,7 +7,7 @@ from typing import Type
 from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
 
-from ..config import GDRIVE_FOLDER_ID, DATA_DIR
+from ..config import GDRIVE_FOLDER_ID, DATA_DIR, PRODUCT_OVERRIDE
 from ..utils import get_logger
 
 logger = get_logger(__name__)
@@ -40,6 +40,11 @@ class GDriveTool(BaseTool):
     args_schema: Type[BaseModel] = GDriveInput
 
     def _run(self, query: str = "product data") -> str:
+        # CLI --product flag overrides everything
+        if PRODUCT_OVERRIDE:
+            logger.info("Using CLI product override (%d chars)", len(PRODUCT_OVERRIDE))
+            return PRODUCT_OVERRIDE
+
         if GDRIVE_FOLDER_ID and GDRIVE_AVAILABLE:
             try:
                 return self._fetch_from_gdrive()

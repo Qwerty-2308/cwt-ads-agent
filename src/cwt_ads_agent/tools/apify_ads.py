@@ -8,7 +8,7 @@ from apify_client import ApifyClient
 from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
 
-from ..config import APIFY_API_TOKEN, APIFY_ACTOR_ID, CWT_SEARCH_TERMS, OUTPUT_DIR
+from ..config import APIFY_API_TOKEN, APIFY_ACTOR_ID, CWT_SEARCH_TERMS, OUTPUT_DIR, SEARCH_TERMS_OVERRIDE
 from ..utils import get_logger
 
 logger = get_logger(__name__)
@@ -31,11 +31,12 @@ class MetaAdsResearchTool(BaseTool):
     args_schema: Type[BaseModel] = MetaAdsInput
 
     def _run(self, search_terms: Optional[str] = None) -> str:
-        terms = (
-            [t.strip() for t in search_terms.split(",")]
-            if search_terms
-            else CWT_SEARCH_TERMS
-        )
+        if search_terms:
+            terms = [t.strip() for t in search_terms.split(",")]
+        elif SEARCH_TERMS_OVERRIDE:
+            terms = [t.strip() for t in SEARCH_TERMS_OVERRIDE.split(",")]
+        else:
+            terms = CWT_SEARCH_TERMS
 
         logger.info("Starting Meta Ads Library scrape | terms=%s", terms)
         client = ApifyClient(APIFY_API_TOKEN)
