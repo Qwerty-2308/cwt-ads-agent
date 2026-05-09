@@ -1,4 +1,8 @@
-"""Agent 4 tool — generates voice narration using ElevenLabs (gTTS fallback)."""
+"""Agent 4 tool — generates voice narration.
+
+Primary: gTTS (Google Text-to-Speech, free, no API key required)
+Upgrade: ElevenLabs (set ELEVENLABS_API_KEY with text_to_speech permission)
+"""
 
 from pathlib import Path
 from typing import Type
@@ -19,8 +23,7 @@ class VoiceInput(BaseModel):
 class ElevenLabsVoiceTool(BaseTool):
     name: str = "elevenlabs_voice"
     description: str = (
-        "Converts the ad script text to realistic voice narration using ElevenLabs "
-        "(falls back to gTTS if ElevenLabs key lacks TTS permission). "
+        "Converts the ad script text to voice narration using gTTS (free). "
         "Saves audio to output/voice.mp3 and returns the file path."
     )
     args_schema: Type[BaseModel] = VoiceInput
@@ -28,22 +31,22 @@ class ElevenLabsVoiceTool(BaseTool):
     def _run(self, script: str) -> str:
         output_path = OUTPUT_DIR / "voice.mp3"
 
-        # Try ElevenLabs first
-        try:
-            result = self._elevenlabs(script, output_path)
-            if result:
-                return str(output_path)
-        except Exception as exc:
-            logger.warning("ElevenLabs failed (%s) — falling back to gTTS", exc)
+        # Try ElevenLabs only if key is present AND not the known-broken one
+        if ELEVENLABS_API_KEY and len(ELEVENLABS_API_KEY) > 20:
+            try:
+                result = self._elevenlabs(script, output_path)
+                if result:
+                    return str(output_path)
+            except Exception as exc:
+                logger.warning("ElevenLabs failed (%s) — using gTTS", exc)
 
-        # Fallback: gTTS (Google Text-to-Speech, completely free)
         return self._gtts(script, output_path)
 
     def _elevenlabs(self, script: str, output_path: Path) -> bool:
         from elevenlabs.client import ElevenLabs
 
         client = ElevenLabs(api_key=ELEVENLABS_API_KEY)
-        logger.info("Generating voice via ElevenLabs | voice=%s | chars=%d", ELEVENLABS_VOICE_ID, len(script))
+        logger.info("ElevenLabs TTS | voice=%s | chars=%d", ELEVENLABS_VOICE_ID, len(script))
 
         audio = client.text_to_speech.convert(
             voice_id=ELEVENLABS_VOICE_ID,
@@ -66,10 +69,10 @@ class ElevenLabsVoiceTool(BaseTool):
     def _gtts(self, script: str, output_path: Path) -> str:
         from gtts import gTTS
 
-        logger.info("Generating voice via gTTS | chars=%d", len(script))
+        logger.info("gTTS voice generation | chars=%d", len(script))
         tts = gTTS(text=script, lang="en", slow=False)
         tts.save(str(output_path))
 
         size = output_path.stat().st_size
-        logger.info("gTTS voice saved → %s (%d bytes)", output_path, size)
+        logger.info("gTTS saved → %s (%d bytes)", output_path, size)
         return str(output_path)
